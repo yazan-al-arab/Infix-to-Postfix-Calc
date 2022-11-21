@@ -17,6 +17,7 @@ public class Driver extends Application {
 		Pane pane = FXMLLoader.load(getClass().getClassLoader().getResource("MainView.fxml"));
 		Scene scene = new Scene(pane);
 
+		primaryStage.setTitle("CS2800 Calculator");
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
