@@ -6,8 +6,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
+    <maven.compiler.source>18</maven.compiler.source>
+    <maven.compiler.target>18</maven.compiler.target>
   </properties>
 
   <dependencies>
@@ -32,8 +32,65 @@
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-fxml</artifactId>
       <version>18</version>
-
     </dependency>
+
+    <!-- Start of JavaFX dependecies -->
+    <!-- 
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>18</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-media</artifactId>
+      <version>18</version>
+      <classifier>win</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-media</artifactId>
+      <version>18</version>
+      <classifier>mac</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-media</artifactId>
+      <version>18</version>
+      <classifier>linux</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-graphics</artifactId>
+      <version>18</version>
+      <classifier>win</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-graphics</artifactId>
+      <version>18</version>
+      <classifier>mac</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-graphics</artifactId>
+      <version>18</version>
+      <classifier>linux</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-fxml</artifactId>
+      <version>18</version>
+    </dependency>
+    -->
+
   </dependencies>
 
   <build>
@@ -55,13 +112,13 @@
 
     <plugins>
 
-      <!-- JavaFX plugin 1 -->
+      <!-- JavaFX Debug plugin 1 -->
       <plugin>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-maven-plugin</artifactId>
-        <version>0.0.4</version>
+        <version>0.0.8</version>
         <configuration>
-          <mainClass>uk.ac.rhul.cs2800.Driver</mainClass>
+          <mainClass>uk.ac.rhul.cs2800.Start</mainClass>
         </configuration>
         <executions>
           <execution>
@@ -76,7 +133,17 @@
         </executions>
       </plugin>
 
-      <!-- JavaFX plugin 2 -->
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.7.0</version>
+        <configuration>
+          <source>1.9</source>
+          <target>1.9</target>
+        </configuration>
+      </plugin>
+
+      <!-- Assembly plugin -->
+      <!-- 
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <version>3.3.0</version>
@@ -86,7 +153,7 @@
           </descriptorRefs>
           <archive>
             <manifest>
-              <mainClass>uk.ac.rhul.cs2800.Driver</mainClass>
+              <mainClass>uk.ac.rhul.cs2800.Start</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -99,6 +166,26 @@
             </goals>
           </execution>
         </executions>
+      </plugin> -->
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <shadedArtifactAttached>true</shadedArtifactAttached>
+              <transformers>
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                  <mainClass>uk.ac.rhul.cs2800.Start</mainClass>
+                </transformer>
+              </transformers>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
 
       <!-- JUnit plugin -->
@@ -108,8 +195,9 @@
         <version>3.0.0-M5</version>
       </plugin>
 
+
       <!-- CheckStyle plugin -->
-      <!-- Commenting it out
+      <!-- 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
@@ -134,6 +222,7 @@
       -->
 
     </plugins>
+
   </build>
 
 </project>
