@@ -11,7 +11,15 @@
   </properties>
 
   <dependencies>
-
+  
+    <!--
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>18</version>
+    </dependency>
+    -->
+    
     <!-- JUnit dependency -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
@@ -36,13 +44,7 @@
 
     <!-- Start of JavaFX dependecies -->
   
-    <!--
-    <dependency>
-      <groupId>org.openjfx</groupId>
-      <artifactId>javafx-controls</artifactId>
-      <version>18</version>
-    </dependency>
-    -->
+    
 
     <dependency>
       <groupId>org.openjfx</groupId>
