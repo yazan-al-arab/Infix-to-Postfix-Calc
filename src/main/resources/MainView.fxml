@@ -6,14 +6,55 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.control.Tooltip?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="228.0" minWidth="452.0" prefHeight="228.0" prefWidth="452.0" style="-fx-background-color: #FFFF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uk.ac.rhul.cs2800.MainView">
+<AnchorPane maxHeight="936.0" maxWidth="1392.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="234.0" prefWidth="464.0" style="-fx-background-color: #14405B;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uk.ac.rhul.cs2800.MainView">
    <children>
-      <Pane layoutX="14.0" layoutY="126.0" prefHeight="37.0" prefWidth="422.0" style="-fx-background-color: #2F4F4F; -fx-background-radius: 5;">
+      <Button fx:id="calculateButton" layoutX="182.0" layoutY="189.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#calculateIsPressed" style="-fx-background-color: #005181;" text="Calculate" textFill="WHITE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="182.0" AnchorPane.rightAnchor="189.0">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <tooltip>
+            <Tooltip text="Calculates the expression entered above. The answer will vary depending on the selected radio button." />
+         </tooltip>
+      </Button>
+      <AnchorPane layoutX="18.0" layoutY="20.0" AnchorPane.bottomAnchor="111.0" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="20.0">
          <children>
-            <RadioButton fx:id="infixRadio" layoutX="93.0" layoutY="6.0" mnemonicParsing="false" onAction="#infixIsPressed" selected="true" text="Infix" textFill="WHITE">
+            <Label fx:id="expressionLabel" layoutX="16.0" layoutY="11.0" prefHeight="23.0" prefWidth="86.0" text="Expression" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="Enter an expression so that it can be calculated." />
+               </tooltip>
+            </Label>
+            <TextField fx:id="resultField" editable="false" layoutX="109.0" layoutY="52.0" prefHeight="32.0" prefWidth="299.0" promptText="Press Calculate for a Result" style="-fx-background-radius: 5;" AnchorPane.leftAnchor="109.0" AnchorPane.rightAnchor="14.0" />
+            <TextField fx:id="expressionField" layoutX="109.0" layoutY="7.0" prefHeight="32.0" prefWidth="299.0" promptText="Enter Your Expression" style="-fx-background-radius: 5;" AnchorPane.leftAnchor="109.0" AnchorPane.rightAnchor="14.0" />
+            <Label fx:id="resultLabel" layoutX="41.0" layoutY="57.0" prefHeight="23.0" prefWidth="51.0" text="Result" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="The result will appear after you press calculate." />
+               </tooltip>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="121.0" layoutY="136.0" AnchorPane.leftAnchor="121.0" AnchorPane.rightAnchor="107.0">
+         <children>
+            <RadioButton layoutX="97.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="134.0" text="Reverse Polish" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="5.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="Select this if your expression is in Reverse Polish (Postfix) notation." />
+               </tooltip>
+               <toggleGroup>
+                  <ToggleGroup fx:id="ExpressionOptions1" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton mnemonicParsing="false" prefHeight="22.0" prefWidth="69.0" selected="true" text="Infix" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="167.0">
                <toggleGroup>
                   <ToggleGroup fx:id="ExpressionOptions" />
                </toggleGroup>
@@ -24,45 +65,7 @@
                   <Tooltip text="Select this if your expression is in Infix notation. Infix is considered to be the normal notation which humans use." />
                </tooltip>
             </RadioButton>
-            <RadioButton fx:id="postfixRadio" layoutX="205.0" layoutY="6.0" mnemonicParsing="false" onAction="#postfixIsPressed" text="Reverse Polish" textFill="WHITE" toggleGroup="$ExpressionOptions">
-               <font>
-                  <Font size="16.0" />
-               </font>
-               <tooltip>
-                  <Tooltip text="Select this if your expression is in Reverse Polish (Postfix) notation." />
-               </tooltip>
-            </RadioButton>
          </children>
-      </Pane>
-      <Pane layoutX="14.0" layoutY="16.0" prefHeight="104.0" prefWidth="421.0" style="-fx-background-color: #2F4F4F; -fx-background-radius: 5;">
-         <children>
-            <Label fx:id="expressionLabel" layoutX="13.0" layoutY="17.0" prefHeight="23.0" prefWidth="86.0" text="Expression" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-               <tooltip>
-                  <Tooltip text="Enter an expression so that it can be calculated." />
-               </tooltip>
-            </Label>
-            <TextField fx:id="resultField" editable="false" layoutX="106.0" layoutY="56.0" prefHeight="32.0" prefWidth="299.0" promptText="Press Calculate for a Result" style="-fx-background-radius: 5;" />
-            <TextField fx:id="expressionField" layoutX="107.0" layoutY="13.0" prefHeight="32.0" prefWidth="299.0" promptText="Enter Your Expression" style="-fx-background-radius: 5;" />
-            <Label fx:id="resultLabel" layoutX="14.0" layoutY="60.0" prefHeight="23.0" prefWidth="51.0" text="Result" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-               <tooltip>
-                  <Tooltip text="The result will appear after you press calculate." />
-               </tooltip>
-            </Label>
-         </children>
-      </Pane>
-      <Button fx:id="calculateButton" layoutX="182.0" layoutY="181.0" mnemonicParsing="false" onAction="#calculateIsPressed" style="-fx-background-color: #2F4F4F;" text="Calculate" textFill="WHITE">
-         <font>
-            <Font size="16.0" />
-         </font>
-         <tooltip>
-            <Tooltip text="Calculates the expression entered above. The answer will vary depending on the selected radio button." />
-         </tooltip>
-      </Button>
+      </AnchorPane>
    </children>
-</Pane>
+</AnchorPane>

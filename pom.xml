@@ -11,7 +11,15 @@
   </properties>
 
   <dependencies>
-
+  
+    <!--
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>18</version>
+    </dependency>
+    -->
+    
     <!-- JUnit dependency -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
@@ -35,12 +43,8 @@
     </dependency>
 
     <!-- Start of JavaFX dependecies -->
-    <!-- 
-    <dependency>
-      <groupId>org.openjfx</groupId>
-      <artifactId>javafx-controls</artifactId>
-      <version>18</version>
-    </dependency>
+  
+    
 
     <dependency>
       <groupId>org.openjfx</groupId>
@@ -83,13 +87,6 @@
       <version>18</version>
       <classifier>linux</classifier>
     </dependency>
-
-    <dependency>
-      <groupId>org.openjfx</groupId>
-      <artifactId>javafx-fxml</artifactId>
-      <version>18</version>
-    </dependency>
-    -->
 
   </dependencies>
 
@@ -137,13 +134,13 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.7.0</version>
         <configuration>
-          <source>1.9</source>
-          <target>1.9</target>
+          <source>1.8</source>
+          <target>1.8</target>
         </configuration>
       </plugin>
 
       <!-- Assembly plugin -->
-      <!-- 
+      <!--
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <version>3.3.0</version>
@@ -166,7 +163,8 @@
             </goals>
           </execution>
         </executions>
-      </plugin> -->
+      </plugin>
+      -->
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -197,7 +195,6 @@
 
 
       <!-- CheckStyle plugin -->
-      <!-- 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
@@ -219,7 +216,6 @@
           </execution>
         </executions>
       </plugin>
-      -->
 
     </plugins>
 

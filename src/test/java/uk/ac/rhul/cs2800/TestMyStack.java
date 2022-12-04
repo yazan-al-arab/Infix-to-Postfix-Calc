@@ -132,7 +132,7 @@ class TestMyStack {
     for (int i = 1; i <= 5; i++) {
       myStack.push(i);
     }
-    assertTrue(myStack.top().getClass() == Entry.class);
+    assertTrue(myStack.top().getClass() == MyEntry.class);
   }
 
 
@@ -151,7 +151,7 @@ class TestMyStack {
     for (int i = 1; i <= 5; i++) {
       myStack.push(i);
     }
-    assertTrue(myStack.pop().getClass() == Entry.class);
+    assertTrue(myStack.pop().getClass() == MyEntry.class);
   }
 
 
@@ -277,7 +277,7 @@ class TestMyStack {
    */
   @Test
   void testPassEntryArgument() throws BadTypeException {
-    Entry myEntry = new Entry(Symbol.MINUS);
+    MyEntry myEntry = new MyEntry(Symbol.MINUS);
     myStack.push(myEntry);
     assertTrue(myStack.pop().getType() == Type.SYMBOL, "The type should be SYMBOL.");
   }
@@ -289,7 +289,7 @@ class TestMyStack {
    */
   @Test
   void testPassEntryArgument_2() {
-    Entry myEntry = new Entry("Test String");
+    MyEntry myEntry = new MyEntry("Test String");
     myStack.push(myEntry);
     assertTrue(myStack.pop().getType() == Type.STRING, "The type should be STRING.");
   }
@@ -302,7 +302,7 @@ class TestMyStack {
    */
   @Test
   void testPassEntryArgument_3() {
-    Entry myEntry = new Entry(5);
+    MyEntry myEntry = new MyEntry(5);
     myStack.push(myEntry);
     assertTrue(myStack.top().getType() == Type.NUMBER, "The type should be NUMBER.");
   }
