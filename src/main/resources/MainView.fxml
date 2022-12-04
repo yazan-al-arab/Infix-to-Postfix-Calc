@@ -13,7 +13,7 @@
    <children>
       <Pane layoutX="14.0" layoutY="126.0" prefHeight="37.0" prefWidth="422.0" style="-fx-background-color: #2F4F4F; -fx-background-radius: 5;">
          <children>
-            <RadioButton fx:id="infixRadio" layoutX="93.0" layoutY="6.0" mnemonicParsing="false" onAction="#infixIsPressed" selected="true" text="Infix" textFill="WHITE">
+            <RadioButton layoutX="93.0" layoutY="6.0" mnemonicParsing="false" selected="true" text="Infix" textFill="WHITE">
                <toggleGroup>
                   <ToggleGroup fx:id="ExpressionOptions" />
                </toggleGroup>
@@ -24,7 +24,7 @@
                   <Tooltip text="Select this if your expression is in Infix notation. Infix is considered to be the normal notation which humans use." />
                </tooltip>
             </RadioButton>
-            <RadioButton fx:id="postfixRadio" layoutX="205.0" layoutY="6.0" mnemonicParsing="false" onAction="#postfixIsPressed" text="Reverse Polish" textFill="WHITE" toggleGroup="$ExpressionOptions">
+            <RadioButton layoutX="205.0" layoutY="6.0" mnemonicParsing="false" text="Reverse Polish" textFill="WHITE" toggleGroup="$ExpressionOptions">
                <font>
                   <Font size="16.0" />
                </font>

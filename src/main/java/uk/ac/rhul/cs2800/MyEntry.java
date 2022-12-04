@@ -3,13 +3,13 @@ package uk.ac.rhul.cs2800;
 import java.util.Objects;
 
 /**
- * This class stores an instance of either a number, string, or a symbol. Note that this also stores
- * it's type in a separate field.
+ * This class stores an instance of either a number, string, or a symbol. Note
+ * that this also stores it's type in a separate field.
  * 
  * @author yazan
  *
  */
-public class Entry {
+public class MyEntry {
 
   /**
    * Stores the float value.
@@ -22,7 +22,8 @@ public class Entry {
   private String str;
 
   /**
-   * Stores which type of value it is. It can be either float, string, symbol, or invalid.
+   * Stores which type of value it is. It can be either float, string, symbol, or
+   * invalid.
    */
   private Type type;
 
@@ -32,12 +33,13 @@ public class Entry {
   private Symbol other;
 
   /**
-   * Constructs an Entry instance. This is where the program decides whether this instance is an
-   * entry of float, or an entry of string, or an entry of symbol (exclusively).
+   * Constructs an Entry instance. This is where the program decides whether this
+   * instance is an entry of float, or an entry of string, or an entry of symbol
+   * (exclusively).
    * 
    * @param obj the args entered when constructing an Entry object.
    */
-  public Entry(Object obj) {
+  public MyEntry(Object obj) {
     if (obj instanceof Symbol) {
       type = Type.SYMBOL;
       other = (Symbol) obj;
@@ -99,8 +101,8 @@ public class Entry {
   }
 
   /**
-   * A getter for the entry's type. It will always have a type no matter if it's a string, float, or
-   * symbol.
+   * A getter for the entry's type. It will always have a type no matter if it's a
+   * string, float, or symbol.
    * 
    * @return the type of entry.
    */
@@ -131,11 +133,11 @@ public class Entry {
       return false;
     }
 
-    Entry other = (Entry) obj;
-    return Float.floatToIntBits(number) == Float.floatToIntBits(other.number)
-        && this.other == other.other && Objects.equals(str, other.str) && type == other.type;
+    MyEntry other = (MyEntry) obj;
+    return Float.floatToIntBits(number) == Float.floatToIntBits(other.number) 
+        && this.other == other.other
+        && Objects.equals(str, other.str) 
+        && type == other.type;
   }
-
-
 
 }
