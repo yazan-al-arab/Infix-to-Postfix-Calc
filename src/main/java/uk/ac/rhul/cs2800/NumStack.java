@@ -26,16 +26,5 @@ public class NumStack {
     }
     return value;
   }
-  
-//  public float top() {
-//    float value = 0;
-//    try {
-//      value = stack.top().getValue();
-//    } catch (BadTypeException e) {
-//      // never happens because we only put numbers into stack
-//    }
-//    
-//    return value;
-//  }
 
 }
