@@ -18,9 +18,10 @@ class TestNumStack {
     assertEquals(numStack.isEmpty(), true, "The numstack should be empty.");
   }
   
-//  @Test
-//  void push() {
-//    numStack.push(5.0f);
-//  }
+  @Test
+  void push() {
+    numStack.push(5.0f);
+    assertEquals(numStack.isEmpty(), false, "The numstack shouldn't be empty becuase a value was pushed to it.");
+  }
 
 }

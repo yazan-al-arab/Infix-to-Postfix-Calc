@@ -13,9 +13,9 @@ public class NumStack {
   }
   
   
-//  public void push(float value) {
-//    stack.push(value);
-//  }
+  public void push(float value) {
+    stack.push(value);
+  }
   
 //  public float top() {
 //    float value = 0;
