@@ -16,4 +16,13 @@ public class OpStack {
     stack.push(symbol);
   }
 
+  public Symbol pop() {
+    try {
+      return stack.pop().getSymbol();
+    } catch (BadTypeException e) {
+      // never enters this area because only symbols can be pushed (hence popped).
+    }
+    return null;
+  }
+
 }

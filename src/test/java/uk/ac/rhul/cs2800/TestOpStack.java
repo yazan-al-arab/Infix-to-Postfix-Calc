@@ -24,5 +24,12 @@ class TestOpStack {
     opStack.push(Symbol.DIVIDE);
     assertEquals(opStack.isEmpty(), false, "The opstack shouldn't be empty because a value was pushed to it.");
   }
+  
+  @Test
+  void pop() {
+    opStack.push(Symbol.LEFT_BRACKET);
+    assertEquals(opStack.pop(), Symbol.LEFT_BRACKET, "The return value should be a Left Bracket because this is what was initially pushed.");
+    assertEquals(opStack.isEmpty(), true, "The opstack should be empty because all the values have been popped.");
+  }
 
 }
