@@ -21,13 +21,26 @@ class TestNumStack {
   @Test
   void push() {
     numStack.push(5.0f);
-    assertEquals(numStack.isEmpty(), false, "The numstack shouldn't be empty becuase a value was pushed to it.");
+    assertEquals(numStack.isEmpty(), false, "The numstack shouldn't be empty because a value was pushed to it.");
   }
   
   @Test
   void pop() {
     numStack.push(5.0f);
     assertEquals(numStack.pop(), 5.0f, "The return value should equal 5.0 because that is what was initially.");
+  }
+  
+  @Test
+  void pushMany() {
+    for(float i=0; i<5; i++) {  
+      numStack.push(i);
+    }
+    assertEquals(numStack.isEmpty(), false, "The numstack shouldn't be empty because many values was pushed to it.");
+    
+    for(float i=4; i>=0; i--) {
+      assertEquals(numStack.pop(), i, "The popped value is not correct");
+    }
+    assertEquals(numStack.isEmpty(), true, "The numstack should now be empty after popping all it's values.");
   }
 
 }
