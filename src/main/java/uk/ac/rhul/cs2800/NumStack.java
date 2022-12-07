@@ -8,13 +8,23 @@ public class NumStack {
     stack = new MyStack();
   }
   
-  public Object isEmpty() {
+  public boolean isEmpty() {
     return stack.size() == 0 ? true : false;
   }
   
   
   public void push(float value) {
     stack.push(value);
+  }
+
+  public float pop() {
+    float value = 0;
+    try {
+      value = stack.pop().getValue();
+    } catch (BadTypeException e) {
+      // never enters this area because only floats are pushed.
+    }
+    return value;
   }
   
 //  public float top() {

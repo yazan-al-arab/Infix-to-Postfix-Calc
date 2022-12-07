@@ -23,5 +23,11 @@ class TestNumStack {
     numStack.push(5.0f);
     assertEquals(numStack.isEmpty(), false, "The numstack shouldn't be empty becuase a value was pushed to it.");
   }
+  
+  @Test
+  void pop() {
+    numStack.push(5.0f);
+    assertEquals(numStack.pop(), 5.0f, "The return value should equal 5.0 because that is what was initially.");
+  }
 
 }
