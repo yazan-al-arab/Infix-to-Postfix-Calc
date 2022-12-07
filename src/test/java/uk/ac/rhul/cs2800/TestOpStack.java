@@ -18,5 +18,11 @@ class TestOpStack {
   void isEmpty() {
     assertEquals(opStack.isEmpty(), true, "The opstack should be empty.");
   }
+  
+  @Test
+  void push() {
+    opStack.push(Symbol.DIVIDE);
+    assertEquals(opStack.isEmpty(), false, "The opstack shouldn't be empty because a value was pushed to it.");
+  }
 
 }

@@ -12,4 +12,8 @@ public class OpStack {
     return stack.size() == 0 ? true : false;
   }
 
+  public void push(Symbol symbol) {
+    stack.push(symbol);
+  }
+
 }
