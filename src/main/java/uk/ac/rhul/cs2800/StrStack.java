@@ -16,4 +16,13 @@ public class StrStack {
     stack.push(s);
   }
 
+  public String pop() {
+    try {
+      return stack.pop().getString();
+    } catch (BadTypeException e) {
+      // never enters this area because only strings can be pushed and popped.
+    }
+    return "";
+  }
+
 }
