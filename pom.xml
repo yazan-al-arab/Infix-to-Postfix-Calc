@@ -32,14 +32,14 @@
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-controls</artifactId>
-      <version>11</version>
+      <version>18</version>
     </dependency>
 
     <!-- JavaFX depedency 2 -->
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-fxml</artifactId>
-      <version>11</version>
+      <version>18</version>
     </dependency>
 
     <!-- Start of JavaFX dependecies -->
@@ -47,42 +47,42 @@
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-media</artifactId>
-      <version>11</version>
+      <version>18</version>
       <classifier>win</classifier>
     </dependency>
 
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-media</artifactId>
-      <version>11</version>
+      <version>18</version>
       <classifier>mac</classifier>
     </dependency>
 
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-media</artifactId>
-      <version>11</version>
+      <version>18</version>
       <classifier>linux</classifier>
     </dependency>
 
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-graphics</artifactId>
-      <version>11</version>
+      <version>18</version>
       <classifier>win</classifier>
     </dependency>
 
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-graphics</artifactId>
-      <version>11</version>
+      <version>18</version>
       <classifier>mac</classifier>
     </dependency>
 
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-graphics</artifactId>
-      <version>11</version>
+      <version>18</version>
       <classifier>linux</classifier>
     </dependency>
 
@@ -192,7 +192,7 @@
       </plugin>
 
 
-      <!-- CheckStyle plugin -->
+      <!-- CheckStyle plugin
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
@@ -214,6 +214,8 @@
           </execution>
         </executions>
       </plugin>
+      
+      -->
 
     </plugins>
 

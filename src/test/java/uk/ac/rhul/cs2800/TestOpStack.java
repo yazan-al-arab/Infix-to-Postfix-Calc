@@ -34,22 +34,22 @@ class TestOpStack {
   }
 
   @Test
-  void pushMany() {
+  void pushManyThenPopMany() {
 
     for (Symbol symbol : Symbol.values()) {
       opStack.push(symbol);
     }
-    assertEquals(opStack.isEmpty(), false, "The numstack shouldn't be empty because many values was pushed to it.");
+    assertEquals(opStack.isEmpty(), false, "The opstack shouldn't be empty because many values was pushed to it.");
 
     Symbol[] symbol = Symbol.values();
 
     for (int i = symbol.length - 1; i >= 0; i--) {
       assertEquals(opStack.pop(), symbol[i], "The popped value is not correct");
     }
-    assertEquals(opStack.isEmpty(), true, "The numstack should now be empty after popping all it's values.");
+    assertEquals(opStack.isEmpty(), true, "The opstack should now be empty after popping all it's values.");
   }
 
   // There are no more tests required as all the remaining functionality relies on
-  // the Stack class.
+  // the Stack class.bb  
 
 }

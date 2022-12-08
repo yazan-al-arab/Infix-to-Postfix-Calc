@@ -32,7 +32,7 @@ class TestNumStack {
   }
 
   @Test
-  void pushMany() {
+  void pushManyThenPopMany() {
     for (float i = 0; i < 5; i++) {
       numStack.push(i);
     }
