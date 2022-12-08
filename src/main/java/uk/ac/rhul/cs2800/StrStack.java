@@ -12,4 +12,8 @@ public class StrStack {
     return stack.size() == 0 ? true : false;
   }
 
+  public void push(String s) {
+    stack.push(s);
+  }
+
 }

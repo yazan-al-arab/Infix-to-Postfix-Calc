@@ -18,5 +18,11 @@ class TestStrStack {
   void isEmpty() {
     assertEquals(strStack.isEmpty(), true, "The strstack should be empty.");
   }
+  
+  @Test
+  void push() {
+    strStack.push("test");
+    assertEquals(strStack.isEmpty(), false, "The strstack shouldn't be empty because a string value was pushed to it");
+  }
 
 }
