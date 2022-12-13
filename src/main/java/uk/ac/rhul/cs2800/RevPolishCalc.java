@@ -6,8 +6,10 @@ public class RevPolishCalc implements Calculator {
   }
 
   @Override
-  public float evaluate(String what) throws InvalidExpression {
-    // TODO Auto-generated method stub
-    return 0;
+  public float evaluate(String exp) throws InvalidExpression {
+    if(exp.equals("")) {
+      throw new InvalidExpression("The expression isn't valid.");
+    }
+    return Float.parseFloat(exp);
   }
 }
