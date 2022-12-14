@@ -15,21 +15,37 @@ public class RevPolishCalc implements Calculator {
     
     
     Scanner sc = new Scanner(exp);
-    String next;
+    String curr;
     
     while(sc.hasNext()) {
-      next = sc.next();
+      curr = sc.next();
       try {
-        stack.push(Float.parseFloat(next));
+        stack.push(Float.parseFloat(curr));
       } catch (Exception e) {
         // If operator is read
         
         float operand1, operand2;
         
-        operand1 = stack.pop();
         operand2 = stack.pop();
+        operand1 = stack.pop();
         
-        stack.push(operand1 + operand2);
+        switch(curr) {
+        case "+":
+          stack.push(operand1 + operand2);
+          break;
+        case "-":
+          stack.push(operand1 - operand2);
+          break;
+        case "*":
+          stack.push(operand1 * operand2);
+          break;
+        case "/":
+          stack.push(operand1 / operand2);
+          break;
+        } 
+        
+        
+        
       }
       
     }

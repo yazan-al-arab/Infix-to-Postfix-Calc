@@ -60,5 +60,12 @@ class TestRevPolishCalc {
     assertEquals(15, calc.evaluate("4 5 6 + +"), "Should be equal to 15.");
   }
   
+  @Test
+  void allOtherExpressions() throws InvalidExpression {
+    assertEquals(12, calc.evaluate("4 3 *"), "Should be equal to 12.");
+    assertEquals(2, calc.evaluate("2 1 /"), "Should be equal to 2.");
+    assertEquals(-1, calc.evaluate("4 5 -"), "Should be equal to -1.");
+  }
+  
 
 }
