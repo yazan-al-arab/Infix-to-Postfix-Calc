@@ -38,10 +38,10 @@ public class MainView extends Application implements ViewInterface {
   private Label resultLabel;
 
   @FXML
-  private RadioButton postfixRadio;
+  private RadioButton postfixButton;
 
   @FXML
-  private RadioButton infixRadio;
+  private RadioButton infixButton;
 
 //  /**
 //   * Calculates and outputs the expression.
@@ -103,6 +103,12 @@ public class MainView extends Application implements ViewInterface {
     primaryStage.setScene(scene);
     primaryStage.show();
 
+  }
+
+  @Override
+  public void setResult(String newResult) {
+    resultField.setText(newResult);
+    
   }
 
 }
