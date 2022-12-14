@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="936.0" maxWidth="1392.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="234.0" prefWidth="464.0" style="-fx-background-color: #14405B;" xmlns="http://javafx.com/javafx/11.0.6-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uk.ac.rhul.cs2800.MainView">
+<AnchorPane maxHeight="936.0" maxWidth="1392.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="234.0" prefWidth="464.0" style="-fx-background-color: #14405B;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uk.ac.rhul.cs2800.MainView">
    <children>
-      <Button fx:id="calculateButton" layoutX="175.0" layoutY="188.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#calculateIsPressed" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: #005181;" text="Calculate" textFill="WHITE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="175.0" AnchorPane.rightAnchor="173.0">
+      <Button fx:id="calculateButton" layoutX="175.0" layoutY="188.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: #005181;" text="Calculate" textFill="WHITE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="175.0" AnchorPane.rightAnchor="173.0">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -51,13 +51,10 @@
                   <Tooltip text="Select this if your expression is in Reverse Polish (Postfix) notation." />
                </tooltip>
                <toggleGroup>
-                  <ToggleGroup fx:id="ExpressionOptions1" />
-               </toggleGroup>
-            </RadioButton>
-            <RadioButton mnemonicParsing="false" prefHeight="22.0" prefWidth="69.0" selected="true" text="Infix" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="167.0">
-               <toggleGroup>
                   <ToggleGroup fx:id="ExpressionOptions" />
                </toggleGroup>
+            </RadioButton>
+            <RadioButton mnemonicParsing="false" prefHeight="22.0" prefWidth="69.0" selected="true" text="Infix" textFill="WHITE" toggleGroup="$ExpressionOptions" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="167.0">
                <font>
                   <Font size="16.0" />
                </font>
