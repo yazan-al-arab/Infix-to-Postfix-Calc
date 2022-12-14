@@ -34,7 +34,7 @@
           </execution>
         </executions>
         <configuration>
-          <mainClass>uk.ac.rhul.cs2800.Start</mainClass>
+          <mainClass>uk.ac.rhul.cs2800.Driver</mainClass>
         </configuration>
       </plugin>
       <plugin>
@@ -56,7 +56,7 @@
               <shadedArtifactAttached>true</shadedArtifactAttached>
               <transformers>
                 <transformer>
-                  <mainClass>uk.ac.rhul.cs2800.Start</mainClass>
+                  <mainClass>uk.ac.rhul.cs2800.Driver</mainClass>
                 </transformer>
               </transformers>
             </configuration>
