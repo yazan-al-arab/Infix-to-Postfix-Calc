@@ -67,5 +67,11 @@ class TestRevPolishCalc {
     assertEquals(-1, calc.evaluate("4 5 -"), "Should be equal to -1.");
   }
   
+  @Test
+  void mixedExpressions() throws InvalidExpression {
+    assertEquals(-10, calc.evaluate("4 7 2 * -"), "Should be equal to 10.");
+    assertEquals(7, calc.evaluate("5 2 1 / +"), "Should be equal to 7.");
+    assertEquals(3, calc.evaluate("2 5 4 - +"), "Should be equal to 3.");
+  }
 
 }
