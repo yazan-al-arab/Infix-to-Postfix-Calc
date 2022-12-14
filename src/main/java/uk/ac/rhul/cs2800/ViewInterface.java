@@ -7,5 +7,7 @@ public interface ViewInterface {
   String getExpression();
 
   public void menu();
+  
+  public void setResult(String newResult);
 
 }
