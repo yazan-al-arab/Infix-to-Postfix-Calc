@@ -27,11 +27,23 @@ class TestRevPolishCalc {
   
   @Test
   void nullArgument() throws InvalidExpression {
-    assertThrows(NullPointerException.class, () -> calc.evaluate(null));
+    assertThrows(NullPointerException.class, () -> calc.evaluate(null), "Null value should not be accepted.");
   }
-//
-//  @Test
-//  void addition() throws InvalidExpression {
-//    assertEquals(2, calc.evaluate("0 0 +"), "Should equal 2.");
-//  }
+
+  @Test
+  void unbalancedExpressions() throws InvalidExpression {
+    assertThrows(InvalidExpression.class, () -> calc.evaluate("0 0"), "It is an unbalanced expression.");
+    assertThrows(InvalidExpression.class, () -> calc.evaluate("0 0 + +"), "It is an unbalanced expression.");
+    assertThrows(InvalidExpression.class, () -> calc.evaluate("1 2 2 1 +"), "It is an unbalanced expression.");
+    assertThrows(InvalidExpression.class, () -> calc.evaluate("0 + / /"), "It is an unbalanced expression.");
+    assertEquals(0, calc.evaluate("0 0 +"), "It is an unbalanced expression.");
+    
+  }
+  
+  @Test
+  void checkOrder() throws InvalidExpression {
+    assertThrows(InvalidExpression.class, () -> calc.evaluate("1 + 2"), "It is an unbalanced expression.");
+  }
+  
 }
+
