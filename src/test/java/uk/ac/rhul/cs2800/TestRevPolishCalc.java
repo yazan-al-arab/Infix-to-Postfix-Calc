@@ -21,8 +21,17 @@ class TestRevPolishCalc {
   }
   
   @Test
-  void floatZero() throws InvalidExpression {
+  void singleNumber() throws InvalidExpression {
     assertEquals(0, calc.evaluate("0"), "The result should be 0.");
   }
-
+  
+  @Test
+  void nullArgument() throws InvalidExpression {
+    assertThrows(NullPointerException.class, () -> calc.evaluate(null));
+  }
+//
+//  @Test
+//  void addition() throws InvalidExpression {
+//    assertEquals(2, calc.evaluate("0 0 +"), "Should equal 2.");
+//  }
 }
