@@ -1,113 +1,91 @@
 package uk.ac.rhul.cs2800;
 
+import java.util.EmptyStackException;
 import java.util.Scanner;
 
+/**
+ * Calculates a Reverse Polish (also known as PostFix) expression.
+ * 
+ * @author yazan
+ */
 public class RevPolishCalc implements Calculator {
 
-  NumStack stack = new NumStack();
-  
+  /**
+   * Creates a RevPolishCalc object.
+   */
   public RevPolishCalc() {
   }
 
+  /**
+   * Checks if the expression is Reverse Polish and computes the solution.
+   * 
+   * @param exp The reverse polish expression.
+   * @return The result of the expression.
+   * @throws InvalidExpression when the expression is unbalanced or is not reverse polish.
+   */
   @Override
   public float evaluate(String exp) throws InvalidExpression {
-    checkBalance(exp);
-    
-    
-    Scanner sc = new Scanner(exp);
-    String curr;
-    
-    while(sc.hasNext()) {
-      curr = sc.next();
-      try {
-        stack.push(Float.parseFloat(curr));
-      } catch (Exception e) {
-        // If operator is read
-        
-        float operand1, operand2;
-        
-        operand2 = stack.pop();
-        operand1 = stack.pop();
-        
-        switch(curr) {
-        case "+":
-          stack.push(operand1 + operand2);
-          break;
-        case "-":
-          stack.push(operand1 - operand2);
-          break;
-        case "*":
-          stack.push(operand1 * operand2);
-          break;
-        case "/":
-          stack.push(operand1 / operand2);
-          break;
-        } 
-        
-        
-        
-      }
-      
-    }
 
-    return stack.pop();
-  }
-
-  public void checkBalance(String exp) throws InvalidExpression {
-    
     if (exp.equals("") || exp == null) {
       throw new InvalidExpression("No expression was provided.");
     }
-    
-    int numCount = 0, 
-        opCount = 0;
-    
-    boolean scannedAllNumbers = false;
-    
-    try (Scanner sc = new Scanner(exp)) {
-      String curr;
-      
-      while(sc.hasNext()) {
-        curr = sc.next();
+
+    NumStack stack = new NumStack();
+    Scanner sc = new Scanner(exp.trim());
+
+    while (sc.hasNext()) {
+      String curr = new String();
+      curr = sc.next();
+
+      try {
+        // float value
+        stack.push(Float.parseFloat(curr));
+
+      } catch (Exception e) {
+        // not a float value
+
+        float operand1;
+        float operand2;
+        float immediateResult;
+
         try {
-          Float.parseFloat(curr);
-          
-          if(!scannedAllNumbers) {
-            numCount++;
-          }
-          
-        } catch (Exception e) {
-          scannedAllNumbers = true;
-          
-          switch(curr) {
+          operand2 = stack.pop();
+          operand1 = stack.pop();
+        } catch (EmptyStackException e1) {
+          throw new InvalidExpression("Unbalanced expression.");
+        }
+
+        switch (curr) {
           case "+":
+            immediateResult = operand1 + operand2;
             break;
           case "-":
+            immediateResult = operand1 - operand2;
             break;
           case "*":
+            immediateResult = operand1 * operand2;
             break;
           case "/":
+            if (operand2 == 0) {
+              throw new InvalidExpression("Cannot divide a number by zero.");
+            }
+            immediateResult = operand1 / operand2;
             break;
           default:
             throw new InvalidExpression("A symbol in the expression is not recognised.");
-          } 
-          
-          opCount++;
         }
+        stack.push(immediateResult);
       }
-    } catch (Exception e) {
-      e.printStackTrace();
     }
-    
-    if(numCount == 1 && opCount == 0) {
-      return;
+
+    float result = stack.pop();
+
+    // if there are numbers left without operators
+    if (!(stack.isEmpty())) {
+      throw new InvalidExpression("Unbalanced expression.");
     }
-    
-    if(!(opCount == numCount-1)) {
-      throw new InvalidExpression("Unbalanced expression1.");
-    }
+
+    return result;
   }
-  
-  
-  
+
 }

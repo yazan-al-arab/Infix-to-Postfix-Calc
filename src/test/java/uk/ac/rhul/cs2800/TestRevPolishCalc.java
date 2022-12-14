@@ -72,6 +72,8 @@ class TestRevPolishCalc {
     assertEquals(-10, calc.evaluate("4 7 2 * -"), "Should be equal to 10.");
     assertEquals(7, calc.evaluate("5 2 1 / +"), "Should be equal to 7.");
     assertEquals(3, calc.evaluate("2 5 4 - +"), "Should be equal to 3.");
+    assertEquals(8, calc.evaluate(" 2 5 4 - + 5 +"), "Should be equal to 8.");
+    assertEquals(-1.5342763662338257, calc.evaluate("1 2 4 + 2 5 + 3 * 235 / 3 1 + - / *"), "Should be equal to -1.5342763662338257.");
   }
 
 }
