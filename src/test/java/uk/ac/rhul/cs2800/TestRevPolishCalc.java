@@ -49,13 +49,16 @@ class TestRevPolishCalc {
   void checkWrongOperator() throws InvalidExpression {
     assertThrows(InvalidExpression.class, () -> calc.evaluate("1 2 £"), "It should return InvalidExpression.");
     assertThrows(InvalidExpression.class, () -> calc.evaluate("1 2 abcd"), "It should return InvalidExpression.");
-    // all other potential unrecognised operators don't need to be tested for
+    // all other potentially unrecognised operators don't need to be tested for
     // because the only accepted operators are defined in the checkBalance method.
   }
 
-//  @Test
-//  void additionExpressions() throws InvalidExpression {
-//    assertEquals(7, calc.evaluate("4 3 +"), "Should be equal to 7.");
-//  }
+  @Test
+  void additionExpressions() throws InvalidExpression {
+    assertEquals(7, calc.evaluate("4 3 +"), "Should be equal to 7.");
+    assertEquals(6, calc.evaluate("1 2 3 + +"), "Should be equal to 6.");
+    assertEquals(15, calc.evaluate("4 5 6 + +"), "Should be equal to 15.");
+  }
+  
 
 }

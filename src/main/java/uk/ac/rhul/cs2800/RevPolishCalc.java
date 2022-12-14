@@ -14,21 +14,27 @@ public class RevPolishCalc implements Calculator {
     checkBalance(exp);
     
     
-//    Scanner sc = new Scanner(exp);
-//    String next;
-//    
-//    while(sc.hasNext()) {
-//      next = sc.next();
-//      try {
-//        stack.push(Float.parseFloat(next));
-//      } catch (Exception e) {
-//        // If operator is read
-//        
-//      }
-//      
-//    }
+    Scanner sc = new Scanner(exp);
+    String next;
+    
+    while(sc.hasNext()) {
+      next = sc.next();
+      try {
+        stack.push(Float.parseFloat(next));
+      } catch (Exception e) {
+        // If operator is read
+        
+        float operand1, operand2;
+        
+        operand1 = stack.pop();
+        operand2 = stack.pop();
+        
+        stack.push(operand1 + operand2);
+      }
+      
+    }
 
-    return 0;
+    return stack.pop();
   }
 
   public void checkBalance(String exp) throws InvalidExpression {
