@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
@@ -26,16 +25,7 @@ public class MainView extends Application implements ViewInterface {
   private TextField expressionField;
 
   @FXML
-  private Label expressionLabel;
-
-  @FXML
-  private Pane mainPane;
-
-  @FXML
   private TextField resultField;
-
-  @FXML
-  private Label resultLabel;
 
   @FXML
   private RadioButton postfixButton;
@@ -43,32 +33,17 @@ public class MainView extends Application implements ViewInterface {
   @FXML
   private RadioButton infixButton;
 
-//  /**
-//   * Calculates and outputs the expression.
-//   * 
-//   * @param event calculate button pressed
-//   */
-//  @FXML
-//  public void calculateIsPressed(ActionEvent event) {
-//    try {
-//      // If expression is a float value, double it and output it
-//      Float input = 2 * Float.parseFloat(expressionField.getText());
-//      resultField.setText(String.valueOf(input));
-//
-//    } catch (Exception e) {
-//      // otherwise copy the contents of expression over to result
-//      resultField.setText(expressionField.getText());
-//    }
-//  }
   
+  // Inspired from Prof Dave's MVCJavaFX project
+  
+  // Makes it a JavaFX Singleton.
   private volatile static MainView instance = null;
-  
+
   @FXML
   void initialize() {
     instance = this;
   }
   
-  // Inspired from Dave's code
   public synchronized static MainView getInstance() {
     if (instance == null) {
       new Thread(() -> Application.launch(MainView.class)).start();
@@ -78,7 +53,9 @@ public class MainView extends Application implements ViewInterface {
     }
     return instance;
   }
+  // end of singleton code
 
+  
   @Override
   public void addCalculateObserver(Observer f) {
     calculateButton.setOnAction(event -> f.notifyObservers());
@@ -108,7 +85,7 @@ public class MainView extends Application implements ViewInterface {
   @Override
   public void setResult(String newResult) {
     resultField.setText(newResult);
-    
+
   }
 
 }
