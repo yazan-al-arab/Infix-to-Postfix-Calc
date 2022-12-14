@@ -4,12 +4,29 @@ import java.util.Scanner;
 
 public class RevPolishCalc implements Calculator {
 
+  NumStack stack = new NumStack();
+  
   public RevPolishCalc() {
   }
 
   @Override
   public float evaluate(String exp) throws InvalidExpression {
     checkBalance(exp);
+    
+    
+//    Scanner sc = new Scanner(exp);
+//    String next;
+//    
+//    while(sc.hasNext()) {
+//      next = sc.next();
+//      try {
+//        stack.push(Float.parseFloat(next));
+//      } catch (Exception e) {
+//        // If operator is read
+//        
+//      }
+//      
+//    }
 
     return 0;
   }
@@ -26,12 +43,12 @@ public class RevPolishCalc implements Calculator {
     boolean scannedAllNumbers = false;
     
     try (Scanner sc = new Scanner(exp)) {
-      String next;
+      String curr;
       
       while(sc.hasNext()) {
-        next = sc.next();
+        curr = sc.next();
         try {
-          Float.parseFloat(next);
+          Float.parseFloat(curr);
           
           if(!scannedAllNumbers) {
             numCount++;
@@ -39,6 +56,19 @@ public class RevPolishCalc implements Calculator {
           
         } catch (Exception e) {
           scannedAllNumbers = true;
+          
+          switch(curr) {
+          case "+":
+            break;
+          case "-":
+            break;
+          case "*":
+            break;
+          case "/":
+            break;
+          default:
+            throw new InvalidExpression("A symbol in the expression is not recognised.");
+          } 
           
           opCount++;
         }
@@ -55,4 +85,7 @@ public class RevPolishCalc implements Calculator {
       throw new InvalidExpression("Unbalanced expression1.");
     }
   }
+  
+  
+  
 }
