@@ -9,6 +9,11 @@ import java.util.Scanner;
  * @author yazan
  */
 public class RevPolishCalc implements Calculator {
+  
+  private static final String plus = "+";
+  private static final String minus = "-";
+  private static final String times = "*";
+  private static final String divide = "/";
 
   /**
    * Creates a RevPolishCalc object.
@@ -56,16 +61,16 @@ public class RevPolishCalc implements Calculator {
         }
 
         switch (curr) {
-          case "+":
+          case plus:
             immediateResult = operand1 + operand2;
             break;
-          case "-":
+          case minus:
             immediateResult = operand1 - operand2;
             break;
-          case "*":
+          case times:
             immediateResult = operand1 * operand2;
             break;
-          case "/":
+          case divide:
             if (operand2 == 0) {
               throw new InvalidExpression("Cannot divide a number by zero.");
             }
@@ -74,6 +79,7 @@ public class RevPolishCalc implements Calculator {
           default:
             throw new InvalidExpression("A symbol in the expression is not recognised.");
         }
+        
         stack.push(immediateResult);
       }
     }
