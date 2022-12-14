@@ -32,6 +32,9 @@ public class MainView extends Application implements ViewInterface {
 
   @FXML
   private RadioButton infixButton;
+  
+  private static final int MIN_WIDTH = 700;
+  private static final int MIN_HEIGHT = 237;
 
   
   // Inspired from Prof Dave's MVCJavaFX project
@@ -76,6 +79,8 @@ public class MainView extends Application implements ViewInterface {
     Pane pane = FXMLLoader.load(getClass().getClassLoader().getResource("MainView.fxml"));
     Scene scene = new Scene(pane);
 
+    primaryStage.setMinHeight(MIN_HEIGHT);
+    primaryStage.setMinWidth(MIN_WIDTH);
     primaryStage.setTitle("CS2800 Calculator");
     primaryStage.setScene(scene);
     primaryStage.show();
