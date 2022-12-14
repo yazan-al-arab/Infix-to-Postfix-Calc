@@ -13,7 +13,7 @@ public class CalcController {
   private void handleCalculate() {
     String exp = myView.getExpression();
     String result = myModel.evaluate(exp);
-    //myView.setResult(result);
+    myView.setResult(result);
   }
 
 }
