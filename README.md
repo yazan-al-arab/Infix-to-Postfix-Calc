@@ -17,7 +17,7 @@ This Maven project is about creating a Calculator which can solve Reverse Polish
 #### Export a jar file :
 ```mvn clean validate package```
 
-Note: Uses 'Maven Shade Plugin' rather than 'Maven Assembly Plugin' so that it can work on Apple Sillicon Macs.
+Note: Uses 'Maven Shade Plugin' rather than 'Maven Assembly Plugin' so that it can work on Apple Silicon Macs.
 
 #### *Apple Sillicon Macs not supported.
 
