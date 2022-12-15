@@ -18,6 +18,7 @@ class TestRevPolishCalc {
   @Test
   void emptyString() {
     assertThrows(InvalidExpression.class, () -> calc.evaluate(""));
+    assertThrows(NullPointerException.class, () -> calc.evaluate(null));
   }
 
   @Test
@@ -36,6 +37,7 @@ class TestRevPolishCalc {
     assertThrows(InvalidExpression.class, () -> calc.evaluate("0 0 + +"), "It is an unbalanced expression.");
     assertThrows(InvalidExpression.class, () -> calc.evaluate("1 2 2 1 +"), "It is an unbalanced expression.");
     assertThrows(InvalidExpression.class, () -> calc.evaluate("0 + / /"), "It is an unbalanced expression.");
+    assertThrows(InvalidExpression.class, () -> calc.evaluate("2 0 /"), "Should throw an exception due to diving a number by zero.");
     assertEquals(0, calc.evaluate("0 0 +"), "It is an unbalanced expression.");
 
   }
