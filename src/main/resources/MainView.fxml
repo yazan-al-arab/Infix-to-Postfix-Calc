@@ -11,22 +11,21 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
 <GridPane minHeight="193.0" minWidth="700.0" prefHeight="237.0" prefWidth="700.0" style="-fx-background-color: #14405B;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uk.ac.rhul.cs2800.MainView">
    <columnConstraints>
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="196.65298461914062" minWidth="10.0" prefWidth="95.00117492675781" />
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="597.991455078125" minWidth="10.0" prefWidth="568.9946899414062" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="196.65298461914062" minWidth="10.0" prefWidth="105.5" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="597.991455078125" minWidth="10.0" prefWidth="558.0" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="399.0" minWidth="0.0" prefWidth="36.00531005859375" />
    </columnConstraints>
    <rowConstraints>
-      <RowConstraints maxHeight="360.24875259399414" minHeight="0.03276824951171875" prefHeight="76.15161895751953" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="367.9672317504883" minHeight="10.0" prefHeight="62.357177734375" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="360.24875259399414" minHeight="0.03276824951171875" prefHeight="78.5" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="367.9672317504883" minHeight="10.0" prefHeight="64.5" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="350.0546417236328" minHeight="10.0" prefHeight="32.021087646484375" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="350.0546417236328" minHeight="10.0" prefHeight="59.978912353515625" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
       <TextField fx:id="expressionField" prefHeight="32.0" promptText="Enter Your Expression" style="-fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" />
-      <Label fx:id="expressionLabel" contentDisplay="CENTER" prefHeight="23.0" prefWidth="76.0" text="Expression" textFill="WHITE" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+      <Label fx:id="expressionLabel" contentDisplay="CENTER" prefHeight="23.0" prefWidth="99.0" text=" Expression" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -34,9 +33,9 @@
             <Tooltip text="Enter an expression so that it can be calculated." />
          </tooltip>
       </Label>
-      <Label fx:id="resultLabel" prefHeight="23.0" prefWidth="60.0" text="Result" textFill="WHITE" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+      <Label fx:id="resultLabel" prefHeight="23.0" prefWidth="60.0" text="Result" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="System Bold" size="15.0" />
          </font>
          <tooltip>
             <Tooltip text="The result will appear after you press calculate." />
