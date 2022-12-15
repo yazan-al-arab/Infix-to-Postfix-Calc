@@ -31,7 +31,7 @@ public class RevPolishCalc implements Calculator {
   @Override
   public float evaluate(String exp) throws InvalidExpression {
 
-    if (exp.equals("") || exp == null) {
+    if (exp.equals("")) {
       throw new InvalidExpression("No expression was provided.");
     }
 
