@@ -42,7 +42,7 @@
          </tooltip>
       </Label>
       <TextField fx:id="resultField" editable="false" prefHeight="32.0" promptText="Press Calculate for a Result" style="-fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-      <RadioButton mnemonicParsing="false" text="Reverse Polish" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+      <RadioButton mnemonicParsing="false" selected="true" text="Reverse Polish" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
          <font>
             <Font size="16.0" />
          </font>
@@ -52,14 +52,6 @@
          <toggleGroup>
             <ToggleGroup fx:id="ExpressionOptions" />
          </toggleGroup>
-      </RadioButton>
-      <RadioButton fx:id="infixButton" mnemonicParsing="false" selected="true" text="Infix" textFill="WHITE" toggleGroup="$ExpressionOptions" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-         <font>
-            <Font size="16.0" />
-         </font>
-         <tooltip>
-            <Tooltip text="Select this if your expression is in Infix notation. Infix is considered to be the normal notation which humans use." />
-         </tooltip>
       </RadioButton>
       <Button fx:id="calculateButton" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: #005181;" text="Calculate" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
          <font>
