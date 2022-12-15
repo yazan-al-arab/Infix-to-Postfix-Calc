@@ -1,3 +1,8 @@
+## Version 2.1:
+
+- Removed Infix button from GUI.
+
+>>>>>>> 6ceb5d3 (Removed Dead Code: Infix button from GUI.)
 ## Version 2.0:
 
 - Calculator accepts only reverse polish expressions and can return appropriate answers.
