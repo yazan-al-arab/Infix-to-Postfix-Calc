@@ -45,10 +45,10 @@ public class RevPolishCalc implements Calculator {
       try {
         // float value
         stack.push(Float.parseFloat(curr));
-
-      } catch (Exception e) {
+        
         // not a float value
-
+      } catch (Exception e) {
+        
         float operand1;
         float operand2;
         float immediateResult;
@@ -56,10 +56,13 @@ public class RevPolishCalc implements Calculator {
         try {
           operand2 = stack.pop();
           operand1 = stack.pop();
+          
+          // if there aren't enough numbers for operations
         } catch (EmptyStackException e1) {
           throw new InvalidExpression("Unbalanced expression.");
         }
 
+        // checks if it's a valid operator
         switch (curr) {
           case plus:
             immediateResult = operand1 + operand2;
@@ -78,8 +81,7 @@ public class RevPolishCalc implements Calculator {
             break;
           default:
             throw new InvalidExpression("A symbol in the expression is not recognised.");
-        }
-        
+        }   
         stack.push(immediateResult);
       }
     }
@@ -90,8 +92,6 @@ public class RevPolishCalc implements Calculator {
     if (!(stack.isEmpty())) {
       throw new InvalidExpression("Unbalanced expression.");
     }
-
     return result;
   }
-
 }
