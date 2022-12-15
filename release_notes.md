@@ -2,12 +2,13 @@
 
 - Removed Infix button from GUI.
 
->>>>>>> 6ceb5d3 (Removed Dead Code: Infix button from GUI.)
+
 ## Version 2.0:
 
 - Calculator accepts only reverse polish expressions and can return appropriate answers.
 - Resizing the window will cause elements to resize accordingly.
 - No more ellipses are visible because all text.
+
 
 ## Version 1.3:
 
