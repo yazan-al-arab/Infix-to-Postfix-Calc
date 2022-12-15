@@ -136,8 +136,7 @@ public class MyEntry {
     MyEntry other = (MyEntry) obj;
     return Float.floatToIntBits(number) == Float.floatToIntBits(other.number) 
         && this.other == other.other
-        && Objects.equals(str, other.str) 
-        && type == other.type;
+        && Objects.equals(str, other.str) && type == other.type;
   }
 
 }

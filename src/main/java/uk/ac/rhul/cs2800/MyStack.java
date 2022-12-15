@@ -22,8 +22,8 @@ public class MyStack {
   private List<MyEntry> ent = new ArrayList<MyEntry>();
 
   /**
-   * Stores a stack of entries. It provides methods like push() and pop() to simulate a stack
-   * experience.
+   * Stores a stack of entries. It provides methods like push() and pop() to
+   * simulate a stack experience.
    * 
    * @author yazan
    *
