@@ -1,3 +1,9 @@
+## Version 2.0:
+
+- Calculator accepts only reverse polish expressions and can return appropriate answers.
+- Resizing the window will cause elements to resize accordingly.
+- No more ellipses are visible because all text.
+
 ## Version 1.3:
 
 - The project can now output a fat jar file which
