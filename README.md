@@ -12,10 +12,10 @@ This Maven project is about creating a Calculator which can solve Reverse Polish
 
 ## Eclipse Run Configuration Goals
 #### Run as JavaFX*:
-```mvn javafx:run```
+```mvn compile javafx:run```
 
 #### Export a jar file :
-```mvn clean validate package```
+```mvn clean package```
 
 Note: Uses 'Maven Shade Plugin' rather than 'Maven Assembly Plugin' so that it can work on Apple Silicon Macs.
 

@@ -1,12 +1,20 @@
+## Version 2.2:
+
+- Corrected the 'JavaFX' command README.md.
+- Corrected the 'Export as Jar file' command in README.md
+
+
 ## Version 2.1:
 
 - Removed Infix button from GUI.
+
 
 ## Version 2.0:
 
 - Calculator accepts only reverse polish expressions and can return appropriate answers.
 - Resizing the window will cause elements to resize accordingly.
 - No more ellipses are visible because all text.
+
 
 ## Version 1.3:
 
