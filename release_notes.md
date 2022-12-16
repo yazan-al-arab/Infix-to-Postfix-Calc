@@ -1,3 +1,9 @@
+## Version 2.2:
+
+- Corrected the 'JavaFX' command README.md.
+- Corrected the 'Export as Jar file' command in README.md
+
+
 ## Version 2.1:
 
 - Removed Infix button from GUI.
